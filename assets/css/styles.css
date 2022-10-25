@@ -4,17 +4,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html,
-body,
-button {
   font-family: 'League Spartan', sans-serif;
   font-weight: 700;
 }
 
 body {
   font-size: 2rem;
+  background-color: hsl(222, 26%, 31%);
 }
 
 button {
@@ -26,15 +22,11 @@ button {
   color: hsl(221, 14%, 31%);
 }
 
-main {
-  max-width: 100vw;
-  height: 100vh;
-  background-color: hsl(222, 26%, 31%);
-}
-
 .container {
   max-width: 250px;
   margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .topo,
@@ -43,11 +35,11 @@ main {
   margin-bottom: 1rem;
 }
 
-.tela {
-  height: 5rem;
+#operacao-anterior,
+#operacao-atual {
+  overflow-wrap: break-word;
   text-align: right;
-  line-height: 50px;
-  overflow: hidden;
+  min-height: 1.8rem;
 }
 
 .tela,
@@ -59,7 +51,7 @@ main {
 button,
 .tela,
 .calculadora {
-  border-radius: .4rem;
+  border-radius: .5rem;
 }
 
 .calculadora {
