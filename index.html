@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="theme-1">
 
 <head>
   <meta charset="UTF-8">
@@ -7,6 +7,7 @@
   <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <script src="assets/js/theme-toggle.js" defer></script>
   <link rel="stylesheet" href="assets/css/styles.css">
   <script src="assets/js/index.js" defer></script>
 
@@ -17,9 +18,21 @@
   <main>
     <div class="container">
       <div class="topo">
-        <h1>calc</h1>
+        <div class="toggle">
+          <h1>calc</h1>
+          <div class="float-right">
+            <p id="one">1</p>
+            <p id="two">2</p>
+            <p id="three">3</p>
+          </div>
+        </div>
         <div class="theme">
-          THEME
+          <p>THEME</p>
+          <div class="box" id="theme-toggle">
+            <button class="btn-box" id="btn-1" onclick="toggleTheme('theme-1')"></button>
+            <button class="btn-box" id="btn-2" onclick="toggleTheme('theme-2')"></button>
+            <button class="btn-box" id="btn-3" onclick="toggleTheme('theme-3')"></button>
+          </div>
         </div>
       </div>
       <div id="operacoes" class="tela">

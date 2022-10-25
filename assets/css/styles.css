@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+@import "theme-toggle.css";
 
 * {
   margin: 0;
@@ -10,7 +11,7 @@
 
 body {
   font-size: 2rem;
-  background-color: hsl(222, 26%, 31%);
+  background-color: var(--main-background);
 }
 
 button {
@@ -19,7 +20,8 @@ button {
   cursor: pointer;
   min-width: fit-content;
   border: none;
-  color: hsl(221, 14%, 31%);
+  color: var(--text);
+  background-color: var(--pad-key-background);
 }
 
 .container {
@@ -31,7 +33,7 @@ button {
 
 .topo,
 .tela {
-  color: #fff;
+  color: var(--text);
   margin-bottom: 1rem;
 }
 
@@ -45,7 +47,10 @@ button {
 .tela,
 .calculadora {
   padding: 1rem;
-  background-color: hsl(223, 31%, 20%);
+}
+
+.tela {
+  background-color: var(--screen-background);
 }
 
 button,
@@ -55,6 +60,7 @@ button,
 }
 
 .calculadora {
+  background-color: var(--toggle-keypad-background);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
@@ -69,29 +75,83 @@ button,
 #equals-button {
   grid-column: 3 / 5;
   grid-row: 5 / 6;
-  background-color: hsl(6, 63%, 50%);
+  background-color: var(--key-toggle);
 }
 
 #reset-button,
 #equals-button,
 #del {
-  color: white;
+  color: var(--text-2);
   font-size: .9rem;
 }
 
 #reset-button,
 #del {
-  background-color: hsl(225, 21%, 49%);
+  background-color: var(--key-background);
 }
 
 .topo {
   font-size: 0.7rem;
-  display: flex;
-  align-items: center;
   height: 4rem;
+  margin-top: 10px;
+}
+
+.toggle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.float-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.toggle p {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 20px;
+  cursor: pointer;
 }
 
 .theme {
-  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.theme p {
+  cursor: pointer;
+  margin-right: 15px;
   align-self: center;
+}
+
+.theme .box {
+  width: 60px;
+  height: 20px;
+  background-color: var(--toggle-keypad-background);
+  border-radius: 30px;
+  margin-left: 4px;
+  position: relative;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+button#btn-1,
+button#btn-2,
+button#btn-3 {
+  width: 14px;
+  height: 14px;
+  background-color: var(--toggle-keypad-background);
+  border-radius: 50%;
+  padding: 0;
+}
+
+div.box button.active,
+div.box button.btn-box:hover {
+  background-color: var(--key-toggle);
 }
