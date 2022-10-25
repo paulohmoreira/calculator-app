@@ -8,11 +8,16 @@ for (let i = 0; i < btns.length; i++) {
 
     // If there's no active class
     if (current.length > 0) {
-      current[0].className = current[0].className.replace(" active", "");
+      current[0].className = current[0].className.replace("active", "cor-fundo");
     }
 
     // Add the active class to the current/clicked button
-    this.className += " active";
+    this.className = this.className.replace("cor-fundo", "active");
+
+    // Alterando plano de fundo dos botões não ativos
+    for (let j = 0; j < btns.length; j++) {
+      if(i != j) btns[j].className = btns[j].className.replace("active", "cor-fundo");
+    }
   });
 }
 
