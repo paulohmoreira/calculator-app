@@ -76,6 +76,7 @@ button,
   grid-column: 3 / 5;
   grid-row: 5 / 6;
   background-color: var(--key-toggle);
+  box-shadow: 0 3px var(--key-toggle-shadow);
 }
 
 #reset-button,
@@ -88,6 +89,11 @@ button,
 #reset-button,
 #del {
   background-color: var(--key-background);
+  box-shadow: 0 3px var(--key-shadow);
+}
+
+button.btn {
+  box-shadow: 0 3px var(--pad-key-shadow);
 }
 
 .topo {
@@ -154,6 +160,11 @@ button#btn-3 {
   background-color: var(--toggle-keypad-background);
 }
 
-.active{
+.active {
   background-color: var(--key-toggle);
+}
+
+button.btn:hover,
+button.active:hover {
+  filter: brightness(1.5);
 }
