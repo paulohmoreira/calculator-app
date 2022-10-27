@@ -1,6 +1,10 @@
 const btnContainer = document.getElementById("theme-toggle");
 const btns = btnContainer.getElementsByClassName("btn-box");
 
+const equals = document.getElementById("equals-button");
+const topo = document.querySelector(".topo");
+const telaOperacoes = document.getElementById("operacoes")
+
 // Loop through the buttons and add the active class to the current/clicked button
 for (let i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function () {
@@ -29,19 +33,19 @@ function setTheme(themeName) {
 // function to toggle between light and dark theme
 function toggleTheme(theme) {
   if (theme === 'theme-3') {
-    document.getElementById("equals-button").style.color = "hsl(198, 20%, 13%)";
-    document.querySelector(".topo").style.color = "hsl(52, 100%, 62%)";
-    document.getElementById("operacoes").style.color = "hsl(52, 100%, 62%)";
+    equals.style.color = "var(--text-dark)";
+    topo.style.color = "var(--text)";
+    telaOperacoes.style.color = "var(--text)";
   }
   if (theme === 'theme-2') {
-    document.getElementById("equals-button").style.color = "#FFF";
-    document.querySelector(".topo").style.color = "hsl(221, 14%, 31%)";
-    document.getElementById("operacoes").style.color = "hsl(221, 14%, 31%)";
+    equals.style.color = "var(--text-2)";
+    topo.style.color = "var(--text-3)";
+    telaOperacoes.style.color = "var(--text-3)";
   }
   if (theme === 'theme-1') {
-    document.querySelector(".topo").style.color = "#FFF";
-    document.getElementById("operacoes").style.color = "#FFF";
-    document.getElementById("equals-button").style.color = "#FFF";
+    topo.style.color = "var(--text-2)";
+    telaOperacoes.style.color = "var(--text-2)";
+    equals.style.color = "var(--text-2)";
   }
   setTheme(theme);
 }
