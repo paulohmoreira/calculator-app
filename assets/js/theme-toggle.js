@@ -5,20 +5,20 @@ const equals = document.getElementById("equals-button");
 const topo = document.querySelector(".topo");
 const telaOperacoes = document.getElementById("operacoes")
 
-// Loop through the buttons
+// Loop para pegar todos os botões dos temas
 for (let i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function () {
     setActiveButton(i, ...btns);
   });
 }
 
-// function to set a given theme/color-scheme
+// função para setar o tema no localstorage
 function setTheme(themeName) {
   localStorage.setItem('theme', themeName);
   document.documentElement.className = themeName;
 }
 
-// function to toggle between theme-1, theme-1 and theme-3
+// função que troca entre os 3 temas disponíveis
 function toggleTheme(theme) {
   if (theme === 'theme-3') {
     equals.style.color = "var(--text-dark)";
@@ -38,7 +38,7 @@ function toggleTheme(theme) {
   setTheme(theme);
 }
 
-//function to add the active class to the current/clicked button
+//função para adicionar a classe active no botão atualmente clicado
 function setActiveButton(i, ...btns) {
   const current = document.getElementsByClassName("active");
 
@@ -56,7 +56,7 @@ function setActiveButton(i, ...btns) {
     }
 }
 
-// Immediately invoked function to set the theme on initial load
+// Immediately invoked function para pegar o thema salvo no localstorage
 (function () {
   if (localStorage.getItem('theme') === 'theme-1') {
     toggleTheme('theme-1');
