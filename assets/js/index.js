@@ -70,7 +70,10 @@ class Calculadora {
 
   // Muda os valores na tela da calculadora
   atualizaTela(valorOperacao = null, operacao = null, atual = null, anterior = null) {
-    if (valorOperacao === null) {
+    if (valorOperacao === Infinity) {
+      this.textoOperadorAnterior.innerText = "Não é possível dividir por zero";
+      this.textoOperadorAtual.innerText = "";
+    } else if (valorOperacao === null) {
       // Adiciona número ao operador atual
       this.textoOperadorAtual.innerText += this.operacaoAtual;
     } else {
